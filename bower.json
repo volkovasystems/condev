@@ -1,0 +1,59 @@
+{
+  "name": "condev",
+  "version": "0.0.0",
+  "description": "Evaluate condition over entity.",
+  "main": "condev.deploy.js",
+  "support": "condev.support.js",
+  "authors": [
+    "Richeve S. Bebedor <richeve.bebedor@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "evaluate",
+    "condition",
+    "entity",
+    "condev"
+  ],
+  "homepage": "https://github.com/volkovasystems/condev",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "resolutions": {
+    "arkount": "^0.6.0",
+    "falzy": "^0.19.0",
+    "truly": "^0.18.0",
+    "clazof": "^0.22.0",
+    "wichevr": "^0.8.0",
+    "raze": "^0.27.0",
+    "doubt": "^0.25.0",
+    "wauker": "^0.9.0",
+    "eqe": "^0.1.0",
+    "een": "^0.17.0",
+    "protease": "^0.16.0",
+    "nafe": "^0.1.0",
+    "kein": "^0.17.0",
+    "arid": "^0.24.0",
+    "depher": "^0.28.0",
+    "decrease": "^0.21.0",
+    "falze": "^0.21.0",
+    "dephall": "^0.26.0",
+    "empt": "^0.21.0",
+    "leveld": "^0.1.0",
+    "pyck": "^0.24.0"
+  },
+  "dependencies": {
+    "arkount": "^0.6.0",
+    "clazof": "^0.22.0",
+    "enyof": "^0.2.0",
+    "eqe": "^0.1.0",
+    "falzy": "^0.19.0",
+    "protype": "^0.21.0",
+    "truly": "^0.18.0",
+    "vound": "^0.18.0",
+    "zelf": "^0.11.0"
+  }
+}

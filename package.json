@@ -1,0 +1,49 @@
+{
+  "name": "condev",
+  "version": "0.0.0",
+  "description": "Evaluate condition over entity.",
+  "main": "condev.js",
+  "support": "condev.support.js",
+  "deploy": "condev.deploy.js",
+  "browser": "condev.deploy.js",
+  "scripts": {
+    "build": "babel condev.js --out-file condev.support.js --source-maps && webpack --progress --display-modules",
+    "test": "mocha condev-test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volkovasystems/condev.git"
+  },
+  "keywords": [
+    "evaluate",
+    "condition",
+    "entity",
+    "condev"
+  ],
+  "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/volkovasystems/condev/issues"
+  },
+  "homepage": "https://github.com/volkovasystems/condev#readme",
+  "dependencies": {
+    "arkount": "^0.6.0",
+    "babel-runtime": "^6.23.0",
+    "clazof": "^0.22.0",
+    "enyof": "^0.2.0",
+    "eqe": "^0.1.0",
+    "falzy": "^0.19.0",
+    "protype": "^0.21.0",
+    "truly": "^0.18.0",
+    "vound": "^0.18.0",
+    "zelf": "^0.11.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-latest": "^6.24.1",
+    "source-map-loader": "^0.2.1",
+    "webpack": "^2.4.1"
+  }
+}
