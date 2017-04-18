@@ -1,10 +1,12 @@
 yarn add \
 babel-runtime \
+annon \
 arkount \
 clazof \
 enyof \
 eqe \
 falzy \
+fnamed \
 protype \
 truly \
 vound \
@@ -19,11 +21,13 @@ source-map-loader \
 webpack \
 --dev && \
 bower install \
+annon \
 arkount \
 clazof \
 enyof \
 eqe \
 falzy \
+fnamed \
 protype \
 truly \
 vound \

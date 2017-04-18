@@ -43,6 +43,16 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+annon@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/annon/-/annon-0.1.0.tgz#14fa58e0c03b073247609f10ca6b19d8593032ad"
+  dependencies:
+    babel-runtime "^6.23.0"
+    falzy "^0.19.0"
+    kein "^0.17.0"
+    protype "^0.21.0"
+    stringe "^0.2.0"
+
 ansi-regex@^2.0.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-2.1.1.tgz#c3b33ab5ee360d86e0e628f0468ae7ef27d654df"
@@ -180,6 +190,15 @@ ate@^0.15.0:
   dependencies:
     babel-runtime "^6.23.0"
     falzy "^0.17.0"
+    protype "^0.21.0"
+    zelf "^0.11.0"
+
+ate@^0.16.0:
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/ate/-/ate-0.16.0.tgz#ffcfd019a542ce57f8fe68e3e3da1a4a84687e24"
+  dependencies:
+    babel-runtime "^6.23.0"
+    falzy "^0.19.0"
     protype "^0.21.0"
     zelf "^0.11.0"
 
@@ -1415,6 +1434,18 @@ find-up@^1.0.0:
     path-exists "^2.0.0"
     pinkie-promise "^2.0.0"
 
+fnamed@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/fnamed/-/fnamed-0.0.0.tgz#8d806d52bcfb5f7be7f79c62a27c716420a4b0c6"
+  dependencies:
+    ate "^0.16.0"
+    babel-runtime "^6.23.0"
+    falzy "^0.19.0"
+    kein "^0.17.0"
+    protype "^0.21.0"
+    stringe "^0.2.0"
+    truly "^0.18.0"
+
 for-in@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -1646,8 +1677,8 @@ ini@~1.3.0:
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.4.tgz#0537cb79daf59b59a1a517dff706c86ec039162e"
 
 interpret@^1.0.0:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.0.2.tgz#f4f623f0bb7122f15f5717c8e254b8161b5c5b2d"
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.0.3.tgz#cbc35c62eeee73f19ab7b10a801511401afc0f90"
 
 invariant@^2.2.0:
   version "2.2.2"
@@ -2856,8 +2887,8 @@ uuid@^3.0.0:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.0.1.tgz#6544bba2dfda8c1cf17e629a3a305e2bb1fee6c1"
 
 v8flags@^2.0.10:
-  version "2.0.12"
-  resolved "https://registry.yarnpkg.com/v8flags/-/v8flags-2.0.12.tgz#73235d9f7176f8e8833fb286795445f7938d84e5"
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/v8flags/-/v8flags-2.1.0.tgz#b21c7b1862261108865cb11aeed833ca53987d8a"
   dependencies:
     user-home "^1.1.1"
 

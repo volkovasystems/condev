@@ -55,11 +55,13 @@
 
 	@include:
 		{
+			"annon": "annon",
 			"arkount": "arkount",
 			"clazof": "clazof",
 			"enyof": "enyof",
 			"eqe": "eqe",
 			"falzy": "falzy",
+			"fnamed": "fnamed",
 			"protype": "protype",
 			"truly": "truly",
 			"vound": "vound",
@@ -68,11 +70,13 @@
 	@end-include
 */
 
+const annon = require( "annon" );
 const arkount = require( "arkount" );
 const clazof = require( "clazof" );
 const enyof = require( "enyof" );
 const eqe = require( "eqe" );
 const falzy = require( "falzy" );
+const fnamed = require( "fnamed" );
 const protype = require( "protype" );
 const truly = require( "truly" );
 const vound = require( "vound" );
@@ -144,7 +148,7 @@ const condev = function condev( entity, condition, state ){
 		}
 	}
 
-	if( type.FUNCTION && condition.name === "condition" ){
+	if( type.FUNCTION && ( fnamed( condition, "condition" ) || annon( condition ) ) ){
 		let result = vound( condition, zelf( this ) )( entity );
 
 		if( !protype( result, BOOLEAN ) ){
