@@ -59,7 +59,6 @@
 	@include:
 		{
 			"annon": "annon",
-			"arkount": "arkount",
 			"clazof": "clazof",
 			"enyof": "enyof",
 			"eqe": "eqe",
@@ -74,7 +73,6 @@
 */
 
 const annon = require( "annon" );
-const arkount = require( "arkount" );
 const clazof = require( "clazof" );
 const enyof = require( "enyof" );
 const eqe = require( "eqe" );
@@ -107,10 +105,6 @@ const condev = function condev( entity, condition, state ){
 			}
 		@end-meta-configuration
 	*/
-
-	if( arkount( arguments ) < 2 ){
-		throw new Error( "invalid parameter" );
-	}
 
 	/*;
 		@note:
@@ -151,14 +145,28 @@ const condev = function condev( entity, condition, state ){
 		}
 	}
 
+	/*;
+		@note:
+			If the condition is a string, this may evaulate to be a class at this stage.
+		@end-note
+	*/
+	if( type.STRING && clazof( entity, condition ) ){
+		return true;
+	}
+
 	if( type.FUNCTION && ( fnamed( condition, "condition" ) || annon( condition ) ) ){
-		let result = vound( condition, zelf( this ) )( entity );
+		try{
+			let result = vound( condition, zelf( this ) )( entity );
 
-		if( !protype( result, BOOLEAN ) ){
-			throw new Error( `invalid condition result, ${ result }` );
+			if( !protype( result, BOOLEAN ) ){
+				throw new Error( `invalid condition result, ${ result }` );
 
-		}else{
-			return result;
+			}else{
+				return result;
+			}
+
+		}catch( error ){
+			throw new Error( `failed executing condition, ${ error.stack }` );
 		}
 	}
 

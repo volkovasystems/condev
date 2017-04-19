@@ -1,7 +1,6 @@
 yarn add \
 babel-runtime \
 annon \
-arkount \
 clazof \
 enyof \
 eqe \
@@ -22,7 +21,6 @@ webpack \
 --dev && \
 bower install \
 annon \
-arkount \
 clazof \
 enyof \
 eqe \

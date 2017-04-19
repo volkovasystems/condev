@@ -59,7 +59,6 @@
               	@include:
               		{
               			"annon": "annon",
-              			"arkount": "arkount",
               			"clazof": "clazof",
               			"enyof": "enyof",
               			"eqe": "eqe",
@@ -74,7 +73,6 @@
               */
 
 var annon = require("annon");
-var arkount = require("arkount");
 var clazof = require("clazof");
 var enyof = require("enyof");
 var eqe = require("eqe");
@@ -108,17 +106,13 @@ var condev = function condev(entity, condition, state) {
                                                         	@end-meta-configuration
                                                         */
 
-	if (arkount(arguments) < 2) {
-		throw new Error("invalid parameter");
-	}
-
 	/*;
-   	@note:
-   		If state is not given or false, and both
-   			entity and condition is falsy then
-   			entity and condition must be equal.
-   	@end-note
-   */
+                                                           	@note:
+                                                           		If state is not given or false, and both
+                                                           			entity and condition is falsy then
+                                                           			entity and condition must be equal.
+                                                           	@end-note
+                                                           */
 	if ((falzy(state) || state === false) && falzy(entity) && falzy(condition)) {
 		return entity === condition;
 	}
@@ -151,14 +145,28 @@ var condev = function condev(entity, condition, state) {
 		}
 	}
 
+	/*;
+   	@note:
+   		If the condition is a string, this may evaulate to be a class at this stage.
+   	@end-note
+   */
+	if (type.STRING && clazof(entity, condition)) {
+		return true;
+	}
+
 	if (type.FUNCTION && (fnamed(condition, "condition") || annon(condition))) {
-		var result = vound(condition, zelf(this))(entity);
+		try {
+			var result = vound(condition, zelf(this))(entity);
 
-		if (!protype(result, BOOLEAN)) {
-			throw new Error("invalid condition result, " + result);
+			if (!protype(result, BOOLEAN)) {
+				throw new Error("invalid condition result, " + result);
 
-		} else {
-			return result;
+			} else {
+				return result;
+			}
+
+		} catch (error) {
+			throw new Error("failed executing condition, " + error.stack);
 		}
 	}
 
