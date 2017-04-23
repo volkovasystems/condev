@@ -47,7 +47,7 @@
               		Condition can be, a string compatible to data type testing module,
               			a regular expression provided that the entity to be tested is a string,
               			a function named condition to be tested with given entity for more customized evaluation,
-              			a class to be tested for inheritance.
+              			a class to be tested for inheritance or function name.
               
               		Returns true if the entity satisfy the condition.
               
@@ -151,6 +151,15 @@ var condev = function condev(entity, condition, state) {
    	@end-note
    */
 	if (type.STRING && clazof(entity, condition)) {
+		return true;
+	}
+
+	/*;
+   	@note:
+   		If the condition is a string, this may evaluate to be a function name.
+   	@end-note
+   */
+	if (type.STRING && fnamed(entity, condition)) {
 		return true;
 	}
 

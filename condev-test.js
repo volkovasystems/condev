@@ -16,3 +16,5 @@ console.log( condev( "yeah", function condition( entity ){ return typeof entity 
 console.log( condev( "yeah", /eah/ ) );
 
 console.log( condev( "yeah", ( entity ) => ( typeof entity == "string" ) ) );
+
+console.log( condev( function constructor( ){ }, "constructor" ) );
