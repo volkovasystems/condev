@@ -1,20 +1,22 @@
-
+const assert = require( "assert" );
 const condev = require( "./condev.js" );
 
-console.log( condev( null, OBJECT, true ) );
+assert.equal( condev( null, OBJECT, true ), false, "should be false" );
 
-console.log( condev( null, OBJECT, false ) );
+assert.equal( condev( null, OBJECT, false ), true, "should be true" );
 
-console.log( condev( "yeah", String ) );
+assert.equal( condev( "yeah", String ), true, "should be true" );
 
-console.log( condev( "yeah", function hello( ){ } ) );
+assert.equal( condev( "yeah", function hello( ){ } ), false, "should be false" );
 
-console.log( condev( "yeah", function condition( entity ){ return entity == "yeah"; } ) );
+assert.equal( condev( "yeah", function condition( entity ){ return entity == "yeah"; } ), true, "should be true" );
 
-console.log( condev( "yeah", function condition( entity ){ return typeof entity == "number"; } ) );
+assert.equal( condev( "yeah", function condition( entity ){ return typeof entity == "number"; } ), false, "should be false" );
 
-console.log( condev( "yeah", /eah/ ) );
+assert.equal( condev( "yeah", /eah/ ), true, "should be true" );
 
-console.log( condev( "yeah", ( entity ) => ( typeof entity == "string" ) ) );
+assert.equal( condev( "yeah", ( entity ) => ( typeof entity == "string" ) ), true, "should be true" );
 
-console.log( condev( function constructor( ){ }, "constructor" ) );
+assert.equal( condev( function constructor( ){ }, "constructor" ), true, "should be true" );
+
+console.log( "ok" );
