@@ -49,6 +49,8 @@
 			a function named condition to be tested with given entity for more customized evaluation,
 			a class to be tested for inheritance or function name.
 
+		If condition is array then it should evaluate true to some condition.
+
 		Returns true if the entity satisfy the condition.
 
 		State dictate that condition must evaluate entity based on the nature
@@ -60,11 +62,13 @@
 		{
 			"annon": "annon",
 			"clazof": "clazof",
+			"doubt": "doubt",
 			"enyof": "enyof",
 			"eqe": "eqe",
 			"falzy": "falzy",
 			"fnamed": "fnamed",
 			"protype": "protype",
+			"raze": "raze",
 			"truly": "truly",
 			"vound": "vound",
 			"zelf": "zelf"
@@ -74,11 +78,13 @@
 
 const annon = require( "annon" );
 const clazof = require( "clazof" );
+const doubt = require( "doubt" );
 const enyof = require( "enyof" );
 const eqe = require( "eqe" );
 const falzy = require( "falzy" );
 const fnamed = require( "fnamed" );
 const protype = require( "protype" );
+const raze = require( "raze" );
 const truly = require( "truly" );
 const vound = require( "vound" );
 const zelf = require( "zelf" );
@@ -99,12 +105,17 @@ const condev = function condev( entity, condition, state ){
 					STRING,
 					UNDEFINED,
 					SYMBOL,
-					"*"
+					"*",
+					"[*]"
 				],
 				"state": "boolean"
 			}
 		@end-meta-configuration
 	*/
+
+	if( doubt( condition, AS_ARRAY ) ){
+		return raze( condition ).some( ( condition ) => condev( entity, condition, state ) );
+	}
 
 	/*;
 		@note:

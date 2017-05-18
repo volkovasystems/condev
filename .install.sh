@@ -2,11 +2,13 @@ yarn add \
 babel-runtime \
 annon \
 clazof \
+doubt \
 enyof \
 eqe \
 falzy \
 fnamed \
 protype \
+raze \
 truly \
 vound \
 zelf \
@@ -22,11 +24,13 @@ webpack \
 bower install \
 annon \
 clazof \
+doubt \
 enyof \
 eqe \
 falzy \
 fnamed \
 protype \
+raze \
 truly \
 vound \
 zelf \

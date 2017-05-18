@@ -49,6 +49,8 @@
               			a function named condition to be tested with given entity for more customized evaluation,
               			a class to be tested for inheritance or function name.
               
+              		If condition is array then it should evaluate true to some condition.
+              
               		Returns true if the entity satisfy the condition.
               
               		State dictate that condition must evaluate entity based on the nature
@@ -60,11 +62,13 @@
               		{
               			"annon": "annon",
               			"clazof": "clazof",
+              			"doubt": "doubt",
               			"enyof": "enyof",
               			"eqe": "eqe",
               			"falzy": "falzy",
               			"fnamed": "fnamed",
               			"protype": "protype",
+              			"raze": "raze",
               			"truly": "truly",
               			"vound": "vound",
               			"zelf": "zelf"
@@ -74,11 +78,13 @@
 
 var annon = require("annon");
 var clazof = require("clazof");
+var doubt = require("doubt");
 var enyof = require("enyof");
 var eqe = require("eqe");
 var falzy = require("falzy");
 var fnamed = require("fnamed");
 var protype = require("protype");
+var raze = require("raze");
 var truly = require("truly");
 var vound = require("vound");
 var zelf = require("zelf");
@@ -99,20 +105,25 @@ var condev = function condev(entity, condition, state) {
                                                         				STRING,
                                                         				UNDEFINED,
                                                         				SYMBOL,
-                                                        				"*"
+                                                        				"*",
+                                                        				"[*]"
                                                         			],
                                                         			"state": "boolean"
                                                         		}
                                                         	@end-meta-configuration
                                                         */
 
+	if (doubt(condition, AS_ARRAY)) {
+		return raze(condition).some(function (condition) {return condev(entity, condition, state);});
+	}
+
 	/*;
-                                                           	@note:
-                                                           		If state is not given or false, and both
-                                                           			entity and condition is falsy then
-                                                           			entity and condition must be equal.
-                                                           	@end-note
-                                                           */
+   	@note:
+   		If state is not given or false, and both
+   			entity and condition is falsy then
+   			entity and condition must be equal.
+   	@end-note
+   */
 	if ((falzy(state) || state === false) && falzy(entity) && falzy(condition)) {
 		return entity === condition;
 	}
