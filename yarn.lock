@@ -67,13 +67,13 @@ anymatch@^1.3.0:
     arrify "^1.0.0"
     micromatch "^2.1.5"
 
-aply@^0.0.0:
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/aply/-/aply-0.0.0.tgz#b4bef1ed4e8fdb496e0a75d80d9b8f7913d059cc"
+aply@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/aply/-/aply-0.1.0.tgz#51a8cbb7435d52689a8e287141d6553282a9407c"
   dependencies:
     babel-runtime "^6.23.0"
-    budge "^0.28.0"
     protype "^0.21.0"
+    raze "^0.29.0"
     wichevr "^0.9.0"
     wichis "^0.13.0"
     zelf "^0.11.0"
