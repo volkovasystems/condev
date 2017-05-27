@@ -1,5 +1,6 @@
 yarn add \
 babel-runtime \
+aply \
 annon \
 clazof \
 doubt \
@@ -10,8 +11,6 @@ fnamed \
 protype \
 raze \
 truly \
-vound \
-zelf \
 --save && \
 yarn add \
 babel-cli \
@@ -22,6 +21,7 @@ source-map-loader \
 webpack \
 --dev && \
 bower install \
+aply \
 annon \
 clazof \
 doubt \
@@ -32,7 +32,5 @@ fnamed \
 protype \
 raze \
 truly \
-vound \
-zelf \
 --save \
 --force-latest

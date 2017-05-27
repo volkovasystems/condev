@@ -1,3 +1,5 @@
+"use strict";
+
 /*;
 	@module-license:
 		The MIT License (MIT)
@@ -60,6 +62,7 @@
 
 	@include:
 		{
+			"aply": "aply",
 			"annon": "annon",
 			"clazof": "clazof",
 			"doubt": "doubt",
@@ -69,13 +72,12 @@
 			"fnamed": "fnamed",
 			"protype": "protype",
 			"raze": "raze",
-			"truly": "truly",
-			"vound": "vound",
-			"zelf": "zelf"
+			"truly": "truly"
 		}
 	@end-include
 */
 
+const aply = require( "aply" );
 const annon = require( "annon" );
 const clazof = require( "clazof" );
 const doubt = require( "doubt" );
@@ -86,8 +88,6 @@ const fnamed = require( "fnamed" );
 const protype = require( "protype" );
 const raze = require( "raze" );
 const truly = require( "truly" );
-const vound = require( "vound" );
-const zelf = require( "zelf" );
 
 const condev = function condev( entity, condition, state ){
 	/*;
@@ -176,7 +176,7 @@ const condev = function condev( entity, condition, state ){
 
 	if( type.FUNCTION && ( fnamed( condition, "condition" ) || annon( condition ) ) ){
 		try{
-			let result = vound( condition, zelf( this ) )( entity );
+			let result = aply( condition, this, entity );
 
 			if( !protype( result, BOOLEAN ) ){
 				throw new Error( `invalid condition result, ${ result }` );

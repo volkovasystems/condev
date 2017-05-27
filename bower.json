@@ -1,6 +1,6 @@
 {
   "name": "condev",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "Evaluate condition over entity.",
   "main": "condev.deploy.js",
   "support": "condev.support.js",
@@ -24,6 +24,7 @@
     "tests"
   ],
   "dependencies": {
+    "aply": "^0.0.0",
     "annon": "^0.6.0",
     "clazof": "^0.27.0",
     "doubt": "^0.26.0",
@@ -33,8 +34,6 @@
     "fnamed": "^0.8.0",
     "protype": "^0.21.0",
     "raze": "^0.29.0",
-    "truly": "^0.18.0",
-    "vound": "^0.24.0",
-    "zelf": "^0.11.0"
+    "truly": "^0.18.0"
   }
 }
