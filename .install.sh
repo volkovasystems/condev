@@ -1,7 +1,7 @@
 yarn add \
 babel-runtime \
-aply \
 annon \
+cald \
 clazof \
 doubt \
 enyof \
@@ -21,8 +21,8 @@ source-map-loader \
 webpack \
 --dev && \
 bower install \
-aply \
 annon \
+cald \
 clazof \
 doubt \
 enyof \

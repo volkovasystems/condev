@@ -62,8 +62,8 @@
 
 	@include:
 		{
-			"aply": "aply",
 			"annon": "annon",
+			"cald": "cald",
 			"clazof": "clazof",
 			"doubt": "doubt",
 			"enyof": "enyof",
@@ -77,8 +77,8 @@
 	@end-include
 */
 
-const aply = require( "aply" );
 const annon = require( "annon" );
+const cald = require( "cald" );
 const clazof = require( "clazof" );
 const doubt = require( "doubt" );
 const enyof = require( "enyof" );
@@ -176,7 +176,7 @@ const condev = function condev( entity, condition, state ){
 
 	if( type.FUNCTION && ( fnamed( condition, "condition" ) || annon( condition ) ) ){
 		try{
-			let result = aply( condition, this, entity );
+			let result = cald( condition, this, entity );
 
 			if( !protype( result, BOOLEAN ) ){
 				throw new Error( `invalid condition result, ${ result }` );
