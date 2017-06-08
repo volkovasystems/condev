@@ -1,6 +1,6 @@
 {
   "name": "condev",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "description": "Evaluate condition over entity.",
   "main": "condev.js",
   "support": "condev.support.js",
@@ -30,18 +30,18 @@
   },
   "homepage": "https://github.com/volkovasystems/condev#readme",
   "dependencies": {
-    "annon": "^0.6.0",
+    "annon": "^0.7.0",
     "babel-runtime": "^6.23.0",
-    "cald": "^0.0.0",
-    "clazof": "^0.27.0",
-    "doubt": "^0.26.0",
-    "enyof": "^0.7.0",
-    "eqe": "^0.2.0",
-    "falzy": "^0.19.0",
-    "fnamed": "^0.8.0",
-    "protype": "^0.21.0",
-    "raze": "^0.29.0",
-    "truly": "^0.18.0"
+    "cald": "^0.1.0",
+    "clazof": "^0.28.0",
+    "doubt": "^0.27.0",
+    "enyof": "^0.8.0",
+    "eqe": "^0.3.0",
+    "falzy": "^0.20.0",
+    "fnamed": "^0.9.0",
+    "protype": "^0.22.0",
+    "raze": "^0.30.0",
+    "truly": "^0.19.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
