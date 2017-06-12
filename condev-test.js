@@ -32,7 +32,6 @@ assert.equal( condev( Date, Date ), true, "should return true" );
 
 assert.equal( condev( Array, Object ), true, "should return true" );
 
-
 assert.equal( condev( Function, Object ), true, "should return true" );
 
 assert.equal( condev( Array, Function ), true, "should be true" );
@@ -46,7 +45,6 @@ assert.equal( condev( function constructor( ){ }, "constructor" ), true, "should
 assert.equal( condev( null, [ OBJECT, STRING ], false ), true, "should be true" );
 
 assert.equal( condev( "yeah", [ STRING, "yeah" ] ), true, "should be true" );
-
 
 assert.equal( condev( { }, { } ), false, "should return false" );
 
@@ -62,8 +60,7 @@ assert.equal( condev( function Hello( ){ }, function Hi( ){ } ), false, "should 
 
 assert.equal( condev( "yeah", function hello( ){ } ), false, "should be false" );
 
-assert.equal( condev( "yeah", function condition( entity ){ return typeof entity == "number"; } ),
-				false, "should be false" );
+assert.equal( condev( "yeah", function condition( entity ){ return typeof entity == "number"; } ), false, "should be false" );
 
 assert.equal( condev( 123, [ STRING, "yeah" ] ), false, "should be false" );
 
