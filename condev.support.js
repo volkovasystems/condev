@@ -142,7 +142,7 @@ var condev = function condev(entity, condition, state) {
    		If condition is a regular expression.
    	@end-note
    */
-	if (protype(entity, STRING) && truly(entity) && clazof(condition, RegExp)) {
+	if (protype(entity, STRING) && truly(entity) && condition instanceof RegExp) {
 		return condition.test(entity);
 	}
 

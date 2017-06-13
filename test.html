@@ -1,8 +1,85 @@
+<!DOCTYPE html>
 <html>
 	<head>
-		<script
-			type="application/javascript"
-			src="./condev.deploy.js">
-		</script>
+		<title>condev unit test</title>
+
+		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
+
+		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
+
+		<script type="application/javascript" src="./condev.deploy.js"></script>
 	</head>
+
+	<body>
+		<div id="qunit"></div>
+
+		<div id="qunit-fixture"></div>
+
+		<script type="application/javascript">
+			QUnit.test( "condev unit test", function( assert ) {
+
+				assert.equal( condev( null, OBJECT, false ), true, "should be true" );
+
+				assert.equal( condev( "yeah", String ), true, "should be true" );
+
+				assert.equal( condev( true, Boolean ), true, "should be true" );
+
+				assert.equal( condev( 123, Number ), true, "should be true" );
+
+				assert.equal( condev( 0, 0, true ), true, "should be true" );
+
+				assert.equal( condev( function( ){ }, function( ){ } ), true, "should be true" );
+
+				assert.equal( condev( function Hello( ){ return "hello" }, function Hello( ){ return "hi" } ), true, "should be true" );
+
+				assert.equal( condev( "yeah", /eah/ ), true, "should be true" );
+
+				assert.equal( condev( [ ], Array ), true, "should be true" );
+
+				assert.equal( condev( { }, Object ), true, "should be true" );
+
+				assert.equal( condev( Array, "Array" ), true, "should return true" );
+
+				assert.equal( condev( Array, Array ), true, "should return true" );
+
+				assert.equal( condev( Object, Object ), true, "should return true" );
+
+				assert.equal( condev( Date, Date ), true, "should return true" );
+
+				assert.equal( condev( Array, Object ), true, "should return true" );
+
+				assert.equal( condev( Function, Object ), true, "should return true" );
+
+				assert.equal( condev( Array, Function ), true, "should be true" );
+
+				assert.equal( condev( "yeah", function condition( entity ){ return entity == "yeah"; } ), true, "should be true" );
+
+				assert.equal( condev( "yeah", ( entity ) => ( typeof entity == "string" ) ), true, "should be true" );
+
+				assert.equal( condev( function constructor( ){ }, "constructor" ), true, "should be true" );
+
+				assert.equal( condev( null, [ OBJECT, STRING ], false ), true, "should be true" );
+
+				assert.equal( condev( "yeah", [ STRING, "yeah" ] ), true, "should be true" );
+
+				assert.equal( condev( { }, { } ), false, "should return false" );
+
+				assert.equal( condev( 0, "0" ), false, "should return false" );
+
+				assert.equal( condev( 0, "" ), false, "should return false" );
+
+				assert.equal( condev( null, undefined ), false, "should return false" );
+
+				assert.equal( condev( 123, "123" ), false, "should return false" );
+
+				assert.equal( condev( function Hello( ){ }, function Hi( ){ } ), false, "should return false" );
+
+				assert.equal( condev( "yeah", function hello( ){ } ), false, "should be false" );
+
+				assert.equal( condev( "yeah", function condition( entity ){ return typeof entity == "number"; } ), false, "should be false" );
+
+				assert.equal( condev( 123, [ STRING, "yeah" ] ), false, "should be false" );
+			} );
+		</script>
+	</body>
 </html>
