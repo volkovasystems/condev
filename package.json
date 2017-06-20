@@ -1,6 +1,6 @@
 {
   "name": "condev",
-  "version": "0.15.0",
+  "version": "0.16.0",
   "description": "Evaluate condition over entity.",
   "main": "condev.js",
   "support": "condev.support.js",
@@ -22,7 +22,8 @@
   ],
   "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
   "contributors": [
-    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+    "Vinse Vinalon <vinsevinalon@gmail.com>"
   ],
   "license": "MIT",
   "bugs": {
@@ -33,7 +34,7 @@
     "annon": "^0.7.0",
     "babel-runtime": "^6.23.0",
     "cald": "^0.2.0",
-    "clazof": "^0.30.0",
+    "clazof": "^0.31.0",
     "doubt": "^0.27.0",
     "enyof": "^0.9.0",
     "eqe": "^0.3.0",
