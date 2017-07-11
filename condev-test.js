@@ -20,8 +20,6 @@ assert.equal( condev( function Hello( ){ return "hello" }, function Hello( ){ re
 
 assert.equal( condev( "yeah", /eah/ ), true, "should be true" );
 
-assert.equal( condev( [ ], [ ] ), false, "should be false" );
-
 assert.equal( condev( { }, Object ), true, "should be true" );
 
 assert.equal( condev( Array, "Array" ), true, "should return true" );
@@ -37,6 +35,8 @@ assert.equal( condev( function constructor( ){ }, "constructor" ), true, "should
 assert.equal( condev( null, [ OBJECT, STRING ], false ), true, "should be true" );
 
 assert.equal( condev( "yeah", [ STRING, "yeah" ] ), true, "should be true" );
+
+assert.equal( condev( [ ], [ ] ), false, "should be false" );
 
 assert.equal( condev( 123, [ STRING, "yeah" ] ), false, "should be false" );
 
