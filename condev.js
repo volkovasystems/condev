@@ -143,17 +143,17 @@ const condev = function condev( entity, condition, state ){
 			If condition is a regular expression.
 		@end-note
 	*/
-	if( protype( entity, STRING ) && truly( entity ) && ( condition instanceof RegExp ) ){
+	if( typeof entity == STRING && truly( entity ) && ( condition instanceof RegExp ) ){
 		return condition.test( entity );
 	}
 
 	let type = protype( condition );
 	if( type.STRING && enyof( condition, BOOLEAN, FUNCTION, NUMBER, OBJECT, STRING, UNDEFINED, SYMBOL ) ){
 		if( state === true ){
-			return ( protype( entity, condition ) && truly( entity ) );
+			return ( typeof entity == condition && truly( entity ) );
 
 		}else{
-			return protype( entity, condition );
+			return typeof entity == condition;
 		}
 	}
 
@@ -179,7 +179,7 @@ const condev = function condev( entity, condition, state ){
 		try{
 			let result = cald( condition, this, entity );
 
-			if( !protype( result, BOOLEAN ) ){
+			if( typeof result != BOOLEAN ){
 				throw new Error( `invalid condition result, ${ result }` );
 
 			}else{
