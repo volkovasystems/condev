@@ -76,7 +76,7 @@
               			"truly": "truly"
               		}
               	@end-include
-              */
+              */var _typeof2 = require("babel-runtime/helpers/typeof");var _typeof3 = _interopRequireDefault(_typeof2);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 var annon = require("annon");
 var cald = require("cald");
@@ -143,17 +143,17 @@ var condev = function condev(entity, condition, state) {
    		If condition is a regular expression.
    	@end-note
    */
-	if (protype(entity, STRING) && truly(entity) && condition instanceof RegExp) {
+	if ((typeof entity === "undefined" ? "undefined" : (0, _typeof3.default)(entity)) == STRING && truly(entity) && condition instanceof RegExp) {
 		return condition.test(entity);
 	}
 
 	var type = protype(condition);
 	if (type.STRING && enyof(condition, BOOLEAN, FUNCTION, NUMBER, OBJECT, STRING, UNDEFINED, SYMBOL)) {
 		if (state === true) {
-			return protype(entity, condition) && truly(entity);
+			return (typeof entity === "undefined" ? "undefined" : (0, _typeof3.default)(entity)) == condition && truly(entity);
 
 		} else {
-			return protype(entity, condition);
+			return (typeof entity === "undefined" ? "undefined" : (0, _typeof3.default)(entity)) == condition;
 		}
 	}
 
@@ -179,7 +179,7 @@ var condev = function condev(entity, condition, state) {
 		try {
 			var result = cald(condition, this, entity);
 
-			if (!protype(result, BOOLEAN)) {
+			if ((typeof result === "undefined" ? "undefined" : (0, _typeof3.default)(result)) != BOOLEAN) {
 				throw new Error("invalid condition result, " + result);
 
 			} else {
