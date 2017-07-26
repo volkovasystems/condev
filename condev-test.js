@@ -2,6 +2,8 @@
 const assert = require( "assert" );
 const condev = require( "./condev.js" );
 
+let duration = Date.now( );
+
 assert.equal( condev( null, OBJECT, false ), true, "should be true" );
 
 assert.equal( condev( "yeah", String ), true, "should be true" );
@@ -52,4 +54,4 @@ assert.equal( condev( "yeah", function hello( ){ } ), false, "should be false" )
 
 assert.equal( condev( "yeah", function condition( entity ){ return typeof entity == "number"; } ), false, "should be false" );
 
-console.log( "ok" );
+console.log( "ok", Date.now( ) - duration, "ms" );

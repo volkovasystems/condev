@@ -1,5 +1,3 @@
-"use strict";
-
 /*;
 	@module-license:
 		The MIT License (MIT)
@@ -73,7 +71,8 @@
 			"fnamed": "fnamed",
 			"protype": "protype",
 			"raze": "raze",
-			"truly": "truly"
+			"truly": "truly",
+			"zelf": "zelf"
 		}
 	@end-include
 */
@@ -89,6 +88,7 @@ const fnamed = require( "fnamed" );
 const protype = require( "protype" );
 const raze = require( "raze" );
 const truly = require( "truly" );
+const zelf = require( "zelf" );
 
 const condev = function condev( entity, condition, state ){
 	/*;
@@ -114,8 +114,18 @@ const condev = function condev( entity, condition, state ){
 		@end-meta-configuration
 	*/
 
-	if( doubt( condition, AS_ARRAY ) ){
-		return raze( condition ).some( ( condition ) => condev( entity, condition, state ) );
+	let self = zelf( this );
+
+	/*;
+		@note:
+			Type checking condition here will not execute the next expression
+				if the type checking is false.
+		@end-note
+	*/
+	if( typeof condition == "object" && doubt( condition, AS_ARRAY ) ){
+		let procedure = condev.bind( self );
+
+		return raze( condition ).some( ( condition ) => procedure( entity, condition, state ) );
 	}
 
 	/*;
@@ -125,8 +135,30 @@ const condev = function condev( entity, condition, state ){
 				entity and condition must be equal.
 		@end-note
 	*/
-	if( ( falzy( state ) || state === false ) && falzy( entity ) && falzy( condition ) ){
+	if(
+		( falzy( state ) || state === false )
+		&& falzy( entity )
+		&& falzy( condition )
+	){
 		return ( entity === condition );
+	}
+
+	/*;
+		@note:
+			If the state is false, entity must be falsy.
+		@end-note
+	*/
+	if( state === false && truly( entity ) ){
+		return false;
+	}
+
+	/*;
+		@note:
+			If the state is true, entity must be truthy.
+		@end-note
+	*/
+	if( state === true && falzy( entity ) ){
+		return false;
 	}
 
 	/*;
@@ -143,26 +175,37 @@ const condev = function condev( entity, condition, state ){
 			If condition is a regular expression.
 		@end-note
 	*/
-	if( typeof entity == STRING && truly( entity ) && ( condition instanceof RegExp ) ){
+	if(
+		typeof entity == "string"
+		&& truly( entity )
+		&& condition instanceof RegExp
+	){
 		return condition.test( entity );
 	}
 
-	let type = protype( condition );
-	if( type.STRING && enyof( condition, BOOLEAN, FUNCTION, NUMBER, OBJECT, STRING, UNDEFINED, SYMBOL ) ){
+	if(
+		condition === "boolean"
+		|| condition === "function"
+		|| condition === "number"
+		|| condition === "object"
+		|| condition === "string"
+		|| condition === "undefined"
+		|| condition === "symbol"
+	){
 		if( state === true ){
 			return ( typeof entity == condition && truly( entity ) );
 
 		}else{
-			return typeof entity == condition;
+			return ( typeof entity == condition );
 		}
 	}
 
 	/*;
 		@note:
-			If the condition is a string, this may evaulate to be a class at this stage.
+			Evaluate using the protype features.
 		@end-note
 	*/
-	if( type.STRING && clazof( entity, condition ) ){
+	if( typeof condition == "string" && protype( entity, condition ) ){
 		return true;
 	}
 
@@ -171,15 +214,33 @@ const condev = function condev( entity, condition, state ){
 			If the condition is a string, this may evaluate to be a function name.
 		@end-note
 	*/
-	if( type.STRING && fnamed( entity, condition ) ){
+	if( typeof condition == "string" && fnamed( entity, condition ) ){
 		return true;
 	}
 
-	if( type.FUNCTION && ( fnamed( condition, "condition" ) || annon( condition ) ) ){
-		try{
-			let result = cald( condition, this, entity );
+	/*;
+		@note:
+			If the condition is a string, this may evaulate to be a class at this stage.
+		@end-note
+	*/
+	if( typeof condition == "string" && clazof( entity, condition ) ){
+		return true;
+	}
 
-			if( typeof result != BOOLEAN ){
+	/*;
+		@note:
+			If condition is a function, and anonymous or 'condition' named,
+				then execute the condition function.
+		@end-note
+	*/
+	if(
+		typeof condition == "function" &&
+		( fnamed( condition, "condition" ) || annon( condition ) )
+	){
+		try{
+			let result = cald( condition, self, entity );
+
+			if( typeof result != "boolean" ){
 				throw new Error( `invalid condition result, ${ result }` );
 
 			}else{
@@ -187,11 +248,16 @@ const condev = function condev( entity, condition, state ){
 			}
 
 		}catch( error ){
-			throw new Error( `failed executing condition, ${ error.stack }` );
+			throw new Error( `cannot execute condition, ${ error.stack }` );
 		}
 	}
 
-	if( type.FUNCTION ){
+	/*;
+		@note:
+			If the condition is a function, it may evaulate using clazof.
+		@end-note
+	*/
+	if( typeof condition == "function" ){
 		return clazof( entity, condition );
 	}
 

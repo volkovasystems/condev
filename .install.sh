@@ -11,6 +11,7 @@ fnamed \
 protype \
 raze \
 truly \
+zelf \
 --save && \
 yarn add \
 babel-cli \
@@ -32,5 +33,6 @@ fnamed \
 protype \
 raze \
 truly \
+zelf \
 --save \
 --force-latest
