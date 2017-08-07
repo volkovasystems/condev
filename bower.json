@@ -1,6 +1,6 @@
 {
 	"name": "condev",
-	"version": "0.18.0",
+	"version": "0.19.0",
 	"description": "Evaluate condition over entity.",
 	"main": "condev.deploy.js",
 	"support": "condev.support.js",

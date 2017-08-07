@@ -69,7 +69,6 @@
 			"eqe": "eqe",
 			"falzy": "falzy",
 			"fnamed": "fnamed",
-			"protype": "protype",
 			"raze": "raze",
 			"truly": "truly",
 			"zelf": "zelf"
@@ -85,7 +84,6 @@ const enyof = require( "enyof" );
 const eqe = require( "eqe" );
 const falzy = require( "falzy" );
 const fnamed = require( "fnamed" );
-const protype = require( "protype" );
 const raze = require( "raze" );
 const truly = require( "truly" );
 const zelf = require( "zelf" );
@@ -205,7 +203,7 @@ const condev = function condev( entity, condition, state ){
 			Evaluate using the protype features.
 		@end-note
 	*/
-	if( typeof condition == "string" && protype( entity, condition ) ){
+	if( typeof condition == "string" && typeof entity == condition ){
 		return true;
 	}
 

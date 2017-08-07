@@ -1,14 +1,17 @@
 {
 	"name": "condev",
-	"version": "0.18.0",
+	"version": "0.19.0",
 	"description": "Evaluate condition over entity.",
 	"main": "condev.js",
 	"support": "condev.support.js",
 	"deploy": "condev.deploy.js",
 	"browser": "condev.deploy.js",
 	"scripts": {
+		"pristine": "rsetmod clean && flxc execute ./.install.sh",
+		"clear": "rsetmod clean --clear",
 		"build": "babel condev.js --out-file condev.support.js --source-maps && webpack --progress --display-modules",
-		"test": "mocha condev-test.js"
+		"pretest": "npm run clear && npm run build",
+		"test": "node condev-test.js"
 	},
 	"repository": {
 		"type": "git",

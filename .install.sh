@@ -8,7 +8,6 @@ enyof \
 eqe \
 falzy \
 fnamed \
-protype \
 raze \
 truly \
 zelf \
@@ -30,7 +29,6 @@ enyof \
 eqe \
 falzy \
 fnamed \
-protype \
 raze \
 truly \
 zelf \
