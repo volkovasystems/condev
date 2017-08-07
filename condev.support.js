@@ -69,7 +69,6 @@
                                                                                                                                                                                                                   			"eqe": "eqe",
                                                                                                                                                                                                                   			"falzy": "falzy",
                                                                                                                                                                                                                   			"fnamed": "fnamed",
-                                                                                                                                                                                                                  			"protype": "protype",
                                                                                                                                                                                                                   			"raze": "raze",
                                                                                                                                                                                                                   			"truly": "truly",
                                                                                                                                                                                                                   			"zelf": "zelf"
@@ -85,7 +84,6 @@ var enyof = require("enyof");
 var eqe = require("eqe");
 var falzy = require("falzy");
 var fnamed = require("fnamed");
-var protype = require("protype");
 var raze = require("raze");
 var truly = require("truly");
 var zelf = require("zelf");
@@ -116,6 +114,12 @@ var condev = function condev(entity, condition, state) {
 
 	var self = zelf(this);
 
+	/*;
+                        	@note:
+                        		Type checking condition here will not execute the next expression
+                        			if the type checking is false.
+                        	@end-note
+                        */
 	if ((typeof condition === "undefined" ? "undefined" : (0, _typeof3.default)(condition)) == "object" && doubt(condition, AS_ARRAY)) {
 		var procedure = condev.bind(self);
 
@@ -199,7 +203,7 @@ var condev = function condev(entity, condition, state) {
    		Evaluate using the protype features.
    	@end-note
    */
-	if (typeof condition == "string" && protype(entity, condition)) {
+	if (typeof condition == "string" && (typeof entity === "undefined" ? "undefined" : (0, _typeof3.default)(entity)) == condition) {
 		return true;
 	}
 
