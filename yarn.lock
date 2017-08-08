@@ -715,9 +715,17 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
+blon@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/blon/-/blon-0.4.0.tgz#568cbf3c10d579bf09dcffc0b785185d5c8d9e07"
+  dependencies:
+    babel-runtime "^6.25.0"
+    ehm "^0.21.0"
+    harden "^0.23.0"
+
 bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.4.0:
-  version "4.11.7"
-  resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.7.tgz#ddb048e50d9482790094c13eb3fcfc833ce7ab46"
+  version "4.11.8"
+  resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.8.tgz#2cde09eb5ee341f484746bb0309b3253b1b1442f"
 
 boom@2.x.x:
   version "2.10.1"
@@ -794,6 +802,13 @@ browserify-zlib@^0.1.4:
   resolved "https://registry.yarnpkg.com/browserify-zlib/-/browserify-zlib-0.1.4.tgz#bb35f8a519f600e0fa6b8485241c979d0141fb2d"
   dependencies:
     pako "~0.2.0"
+
+bse@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/bse/-/bse-0.0.0.tgz#46ade22706da25a2c0afd2de8fe8d5797642a035"
+  dependencies:
+    babel-runtime "^6.25.0"
+    falzy "^0.23.0"
 
 buffer-xor@^1.0.2:
   version "1.0.3"
@@ -883,15 +898,15 @@ cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
-clazof@^0.35.0:
-  version "0.35.0"
-  resolved "https://registry.yarnpkg.com/clazof/-/clazof-0.35.0.tgz#123241605c701137a93b51a1c644edf47aa94425"
+clazof@^0.36.0:
+  version "0.36.0"
+  resolved "https://registry.yarnpkg.com/clazof/-/clazof-0.36.0.tgz#e04ac8deec7f5216ff58efccbf7cbeeac0762683"
   dependencies:
     annon "^0.12.0"
     babel-runtime "^6.25.0"
     falzy "^0.23.0"
     fname "^0.13.0"
-    portel "^0.5.0"
+    portel "^0.6.0"
     protype "^0.24.0"
     raze "^0.34.0"
     stringe "^0.5.0"
@@ -1119,6 +1134,14 @@ een@^0.23.0:
     eqe "^0.5.0"
     raze "^0.34.0"
     truly "^0.20.0"
+
+ehm@^0.21.0:
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/ehm/-/ehm-0.21.0.tgz#2c7dd0d55355a48fe9f4a7327915bed00d19e781"
+  dependencies:
+    babel-runtime "^6.25.0"
+    harden "^0.23.0"
+    sxty4 "^0.11.0"
 
 elliptic@^6.0.0:
   version "6.4.0"
@@ -1358,6 +1381,14 @@ fnamed@^0.14.0:
     protype "^0.24.0"
     truly "^0.20.0"
 
+fno@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/fno/-/fno-0.5.0.tgz#ed9796cbd6c5fde06e353efc457b37402755b971"
+  dependencies:
+    babel-runtime "^6.25.0"
+    ehm "^0.21.0"
+    harden "^0.23.0"
+
 for-in@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -1473,6 +1504,14 @@ global@^4.3.2:
 globals@^9.0.0:
   version "9.18.0"
   resolved "https://registry.yarnpkg.com/globals/-/globals-9.18.0.tgz#aa3896b3e69b487f17e31ed2143d69a8e30c2d8a"
+
+glyo@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/glyo/-/glyo-0.6.0.tgz#dd3276167805847e0db4bbb3bd4ab028f3cdce18"
+  dependencies:
+    babel-runtime "^6.25.0"
+    ehm "^0.21.0"
+    harden "^0.23.0"
 
 graceful-fs@^4.1.2, graceful-fs@^4.1.4:
   version "4.1.11"
@@ -1966,6 +2005,14 @@ nan@^2.3.0:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.6.2.tgz#e4ff34e6c95fdfb5aecc08de6596f43605a7db45"
 
+ndfo@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/ndfo/-/ndfo-0.8.0.tgz#d3881610cedc8459ed51b9945e91d8e915bfbc14"
+  dependencies:
+    babel-runtime "^6.25.0"
+    ehm "^0.21.0"
+    harden "^0.23.0"
+
 nmde@^0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/nmde/-/nmde-0.5.0.tgz#9c39debf8bc44ea3e86add443b0915d72915feae"
@@ -2016,6 +2063,14 @@ node-pre-gyp@^0.6.36:
     tar "^2.2.1"
     tar-pack "^3.4.0"
 
+nol@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/nol/-/nol-0.10.0.tgz#bb9b21f1843a00dde04edecf4e07e875d472633a"
+  dependencies:
+    babel-runtime "^6.25.0"
+    ehm "^0.21.0"
+    harden "^0.23.0"
+
 nopt@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/nopt/-/nopt-4.0.1.tgz#d0d4685afd5415193c8c7505602d0d17cd64474d"
@@ -2057,6 +2112,14 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
+numo@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/numo/-/numo-0.3.0.tgz#846f4abdeac7052fe13a440431962d3ceaacd468"
+  dependencies:
+    babel-runtime "^6.25.0"
+    ehm "^0.21.0"
+    harden "^0.23.0"
+
 oauth-sign@~0.8.1:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43"
@@ -2071,6 +2134,22 @@ object.omit@^2.0.0:
   dependencies:
     for-own "^0.1.4"
     is-extendable "^0.1.1"
+
+objo@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/objo/-/objo-0.1.0.tgz#cda8d080fc9cab4abc88953bc9f33c2713ee1671"
+  dependencies:
+    babel-runtime "^6.25.0"
+    blon "^0.4.0"
+    ehm "^0.21.0"
+    fno "^0.5.0"
+    glyo "^0.6.0"
+    harden "^0.23.0"
+    ndfo "^0.8.0"
+    nol "^0.10.0"
+    numo "^0.3.0"
+    stro "^0.4.0"
+    sxty4 "^0.11.0"
 
 once@^1.3.0, once@^1.3.3:
   version "1.4.0"
@@ -2206,12 +2285,22 @@ plough@^0.29.0:
     doubt "^0.34.0"
     raze "^0.34.0"
 
-portel@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/portel/-/portel-0.5.0.tgz#ad67e99e1b643f7b202ea647efc74e36b1d1f262"
+portel@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/portel/-/portel-0.6.0.tgz#9f25f2731330b145157d073a18c61f1f1ba1caf9"
   dependencies:
-    babel-runtime "^6.23.0"
-    protype "^0.23.0"
+    babel-runtime "^6.25.0"
+    blon "^0.4.0"
+    ehm "^0.21.0"
+    fno "^0.5.0"
+    glyo "^0.6.0"
+    harden "^0.23.0"
+    ndfo "^0.8.0"
+    nol "^0.10.0"
+    numo "^0.3.0"
+    objo "^0.1.0"
+    protype "^0.24.0"
+    stro "^0.4.0"
 
 preserve@^0.2.0:
   version "0.2.0"
@@ -2232,14 +2321,6 @@ process@^0.11.0:
 process@~0.5.1:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/process/-/process-0.5.2.tgz#1638d8a8e34c2f440a91db95ab9aeb677fc185cf"
-
-protype@^0.23.0:
-  version "0.23.0"
-  resolved "https://registry.yarnpkg.com/protype/-/protype-0.23.0.tgz#6bf0306520f61efd308f23c9b601408c877d24fa"
-  dependencies:
-    babel-runtime "^6.23.0"
-    cemento "^0.17.0"
-    harden "^0.23.0"
 
 protype@^0.24.0:
   version "0.24.0"
@@ -2654,6 +2735,14 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
+stro@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/stro/-/stro-0.4.0.tgz#6e667ea88625c5b4148f9ba7e969e3f699e51feb"
+  dependencies:
+    babel-runtime "^6.25.0"
+    ehm "^0.21.0"
+    harden "^0.23.0"
+
 supports-color@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"
@@ -2663,6 +2752,15 @@ supports-color@^4.2.1:
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-4.2.1.tgz#65a4bb2631e90e02420dba5554c375a4754bb836"
   dependencies:
     has-flag "^2.0.0"
+
+sxty4@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/sxty4/-/sxty4-0.11.0.tgz#84eebb12c76c306a1a1813651c042442b9affa81"
+  dependencies:
+    babel-runtime "^6.25.0"
+    bse "^0.0.0"
+    falzy "^0.23.0"
+    harden "^0.23.0"
 
 tapable@^0.2.7:
   version "0.2.8"
